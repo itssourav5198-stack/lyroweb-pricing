@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LyroWeb Solutions — Services & Pricing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0E0C;
+    --surface: #10160F;
+    --surface-raised: #131B14;
+    --border: #1E2B1F;
+    --border-hover: #3A4A38;
+    --gold: #C9A646;
+    --gold-bright: #E0BF5F;
+    --text: #E8E4D8;
+    --text-dim: #8A9389;
+    --text-faint: #5A6357;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 800px 500px at 15% -10%, rgba(201,166,70,0.08), transparent),
+      radial-gradient(ellipse 600px 400px at 100% 30%, rgba(201,166,70,0.04), transparent);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 110px 0 70px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1.hero-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    max-width: 760px;
+  }
+
+  h1.hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold-bright);
+  }
+
+  .hero-sub {
+    margin-top: 26px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text-dim);
+    max-width: 540px;
+  }
+
+  .hero-meta {
+    margin-top: 44px;
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+  }
+
+  .hero-meta-item strong {
+    display: block;
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  /* ===== SECTION LABELS ===== */
+  .section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .section-label::before { content: '—'; color: var(--text-faint); }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 36px;
+    margin-top: 6px;
+  }
+
+  /* ===== CARD GRID ===== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 30px 26px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+
+  .card.featured {
+    border-color: var(--gold);
+    background: linear-gradient(160deg, rgba(201,166,70,0.06), var(--surface) 60%);
+  }
+
+  .badge {
+    position: absolute;
+    top: -13px;
+    left: 26px;
+    background: var(--gold);
+    color: #0A0E0C;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 2px;
+  }
+
+  .card-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .card-name {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  /* invoice-style price line — the signature element */
+  .price-line {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed var(--border);
+    margin-bottom: 18px;
+  }
+
+  .price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 27px;
+    font-weight: 600;
+    color: var(--gold-bright);
+  }
+
+  .price-unit {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-faint);
+  }
+
+  .price-prefix {
+    font-style: italic;
+    font-size: 12px;
+    color: var(--text-faint);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin-bottom: 22px;
+  }
+
+  .feature-list {
+    list-style: none;
+    margin-bottom: 26px;
+    flex-grow: 1;
+  }
+
+  .feature-list li {
+    font-size: 13.5px;
+    color: var(--text);
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .feature-list li:last-child { border-bottom: none; }
+
+  .feature-list li::before {
+    content: '✓';
+    color: var(--gold);
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+
+  .foote-cta {
+    border: 1px solid var(--border-hover);
+    background: transparent;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 13px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+  }
+
+  .foote-cta:hover {
+    border-color: var(--gold);
+    color: var(--gold-bright);
+    background: rgba(201,166,70,0.06);
+  }
+
+  .foote-cta.primary {
+    background: var(--gold);
+    color: #0A0E0C;
+    border-color: var(--gold);
+    font-weight: 600;
+  }
+
+  .foote-cta.primary:hover {
+    background: var(--gold-bright);
+    color: #0A0E0C;
+  }
+
+  /* ===== UTILITY ROW (domain / hosting) ===== */
+  .util-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .util-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px 26px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .util-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .util-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    color: var(--text-faint);
+    text-transform: uppercase;
+  }
+
+  .util-value {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  .util-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--gold-bright);
+  }
+
+  .util-price span {
+    font-size: 12px;
+    color: var(--text-faint);
+    font-weight: 400;
+  }
+
+  .util-note {
+    font-size: 13px;
+    color: var(--text-dim);
+    flex: 1;
+    min-width: 180px;
+  }
+
+  /* ===== FOOTER / CONTACT ===== */
+  .footer {
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+
+  .footer-title {
+    font-family: 'Fraunces', serif;
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  .footer-sub {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 32px;
+  }
+
+  .footer-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: #0A0E0C;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 16px 36px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+  .foote-cta {
+    display: inline-block;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 0;
+    font-size: 15px;
+    padding: 10px 3px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .footer-cta:hover { background: var(--gold-bright); }
+
+  .footer-brand {
+    margin-top: 70px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    .hero { padding: 70px 0 50px; }
+    .hero-meta { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">LyroWeb Solutions</div>
+    <h1 class="hero-title">What we build, <em>and what it costs.</em></h1>
+    <p class="hero-sub">Websites, apps, branding and creative work — priced upfront, no hidden charges. Pick what your business needs and get in touch.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>₹4,000</strong>starting price</div>
+      <div class="hero-meta-item"><strong>7</strong>services offered</div>
+      <div class="hero-meta-item"><strong>1–3</strong>months support included</div>
+    </div>
+  </section>
+
+  <!-- WEBSITE PACKAGES -->
+  <section class="section">
+    <div class="section-label">Website Making Charges</div>
+    <h2 class="section-title">Get a website built</h2>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-tag">Basic</div>
+        <div class="card-name">Basic Package</div>
+        <div class="price-line">
+          <span class="price">₹7,000</span>
+          <span class="price-unit">/ project</span>
+        </div>
+        <p class="card-desc">Ideal for individuals and small businesses needing a clean, fast web presence.</p>
+        <ul class="feature-list">
+          <li>Custom HTML/CSS design</li>
+          <li>Mobile responsive</li>
+          <li>Contact section</li>
+          <li>2 revisions</li>
+        </ul>
+        <a href="mailto:sohimaproduction@gmail.com" class="foote-cta">Get in Touch</a>
+      </div>
+
+      <div class="card featured">
+        <span class="badge">Most Popular</span>
+        <div class="card-tag">Standard</div>
+        <div class="card-name">Standard Package</div>
+        <div class="price-line">
+          <span class="price">₹12,000</span>
+          <span class="price-unit">/ project</span>
+        </div>
+        <p class="card-desc">Multi-page website with advanced features, perfect for growing brands.</p>
+        <ul class="feature-list">
+          <li>Multi-page website</li>
+          <li>Custom UI/UX design</li>
+          <li>SEO basics</li>
+          <li>Unlimited revisions</li>
+          <li>1 month support</li>
+        </ul>
+        <a href="mailto:sohimaproduction@gmail.com" class="foote-cta primary">Hire Me Now</a>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Premium</div>
+        <div class="card-name">Premium Package</div>
+        <div class="price-line">
+          <span class="price">₹30,000</span>
+          <span class="price-unit">/ project</span>
+        </div>
+        <p class="card-desc">Full-scale professional website with advanced integrations and premium support.</p>
+        <ul class="feature-list">
+          <li>Full custom development</li>
+          <li>Advanced UI animations</li>
+          <li>CMS / dynamic features</li>
+          <li>Priority support</li>
+          <li>3 months maintenance</li>
+        </ul>
+        <a href="mailto:sohimaproduction@gmail.com" class="foote-cta">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUNNING / UTILITY CHARGES -->
+  <section class="section">
+    <div class="section-label">Website Running Charges</div>
+    <h2 class="section-title">Keep it live</h2>
+
+    <div class="util-row">
+      <div class="util-card">
+        <div class="util-block">
+          <span class="util-label">Domain</span>
+          <span class="util-value">.com Service</span>
+        </div>
+        <div class="util-block">
+          <span class="util-label">Annual Cost</span>
+          <span class="util-price">₹3,001 <span>/ year</span></span>
+        </div>
+        <p class="util-note">Includes domain registration & renewal for your .com website.</p>
+      </div>
+
+      <div class="util-card">
+        <div class="util-block">
+          <span class="util-label">Hosting</span>
+          <span class="util-value">Web Hosting</span>
+        </div>
+        <div class="util-block">
+          <span class="util-label">Annual Cost</span>
+          <span class="util-price">₹2,499 <span>/ year</span></span>
+        </div>
+        <p class="util-note">Keeps your site online with uptime monitoring & basic tech support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP DEVELOPMENT -->
+  <section class="section">
+    <div class="section-label">App Development</div>
+    <h2 class="section-title">Mobile apps for your business</h2>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-tag">Custom Build</div>
+        <div class="card-name">App Development</div>
+        <div class="price-line">
+          <span class="price-prefix">starting at</span>
+          <span class="price">₹20,000</span>
+          <span class="price-unit">/ project</span>
+        </div>
+        <p class="card-desc">Final price depends on platform, features and complexity — a clear quote is shared after a quick scoping call.</p>
+        <ul class="feature-list">
+          <li>Android / iOS builds</li>
+          <li>Custom UI matching your brand</li>
+          <li>Backend & database setup</li>
+          <li>Testing & Play Store / App Store help</li>
+        </ul>
+        <a href="mailto:sohimaproduction@gmail.com" class="foote-cta">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATIVE SERVICES -->
+  <section class="section">
+    <div class="section-label">Creative Services</div>
+    <h2 class="section-title">Branding, design & sound</h2>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-tag">Creative</div>
+        <div class="card-name">Songwriting</div>
+        <div class="price-line">
+          <span class="price">₹5,000</span>
+          <span class="price-unit">/ song</span>
+        </div>
+        <p class="card-desc">Original lyrics, melodies and full compositions crafted to your vision and genre.</p>
+        <ul class="feature-list">
+          <li>Custom lyrics & melody</li>
+          <li>Any genre / instrument</li>
+          <li>Royalty negotiation help</li>
+          <li>3 revisions</li>
+        </ul>
+        <a href="mailto:sohimaproduction@gmail.com" class="foote-cta">Get in Touch</a>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Design</div>
+        <div class="card-name">Poster & Template Design</div>
+        <div class="price-line">
+          <span class="price">₹6,000</span>
+          <span class="price-unit">/ project</span>
+        </div>
+        <p class="card-desc">Print-ready posters and reusable templates for promotions, events and social media.</p>
+        <ul class="feature-list">
+          <li>Custom poster/template design</li>
+          <li>Print & digital ready files</li>
+          <li>Editable source files</li>
+          <li>2 revisions</li>
+        </ul>
+        <a href="mailto:sohimaproduction@gmail.com" class="foote-cta">Get in Touch</a>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Identity</div>
+        <div class="card-name">Branding</div>
+        <div class="price-line">
+          <span class="price">₹4,000</span>
+          <span class="price-unit">/ project</span>
+        </div>
+        <p class="card-desc">A complete starter identity so your business looks consistent everywhere.</p>
+        <ul class="feature-list">
+          <li>Logo design</li>
+          <li>Brand colors & fonts</li>
+          <li>Social media kit</li>
+          <li>2 revisions</li>
+        </ul>
+        <a href="mailto:sohimaproduction@gmail.com" class="foote-cta">Get in Touch</a>
+      </div>
+
+      <div class="card">
+        <div class="card-tag">Automation</div>
+        <div class="card-name">AI Voice Agent</div>
+        <div class="price-line">
+          <span class="price">₹10,000</span>
+          <span class="price-unit">/ project</span>
+        </div>
+        <p class="card-desc">A custom AI calling agent for your business — handles queries, bookings or support calls.</p>
+        <ul class="feature-list">
+          <li>Custom conversation design</li>
+          <li>Business-specific knowledge setup</li>
+          <li>Call flow & tone tuning</li>
+          <li>1 month support</li>
+        </ul>
+        <a href="mailto:sohimaproduction@gmail.com" class="foote-cta">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer">
+    <h2 class="footer-title">Ready to get started?</h2>
+    <p class="footer-sub">Tell us what your business needs — we'll quote it clearly, no surprises.</p>
+    <a href="mailto:sohimaproduction@gmail.com" class="footer-cta">Contact LyroWeb Solutions</a>
+    <div class="footer-brand">LYROWEB SOLUTIONS — WEBSITE · APP · BRANDING · CREATIVE</div>
+  </section>
+
+</div>
+
+</body>
+</html>
