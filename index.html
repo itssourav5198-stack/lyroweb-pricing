@@ -338,7 +338,21 @@
     font-size: 19px;
     font-weight: 500;
   }
-
+.discount-badges {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gold-bright);
+  background: rgba(201,166,70,0.08);
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  padding: 3px 8px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
   .util-price {
     font-family: 'JetBrains Mono', monospace;
     font-size: 19px;
@@ -535,6 +549,7 @@
   <section class="section">
     <div class="section-label">Website Running Charges</div>
     <h2 class="section-title">Keep it live</h2>
+              <span class="discount-badges">With 3 Year Registration of Domain.</span>
 
     <div class="util-row">
       <div class="util-card">
