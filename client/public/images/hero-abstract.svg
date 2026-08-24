@@ -1,0 +1,18 @@
+<svg width="1200" height="1400" viewBox="0 0 1200 1400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e211e"/>
+      <stop offset="100%" stop-color="#0c110f"/>
+    </linearGradient>
+    <linearGradient id="saffronGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c877"/>
+      <stop offset="100%" stop-color="#d8b44b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1400" fill="url(#bgGrad)"/>
+  <polygon points="150,1050 620,220 900,420 520,1200" fill="url(#saffronGrad)" opacity="0.92"/>
+  <polygon points="600,1300 1080,480 1150,600 700,1360" fill="#f3f0e8" opacity="0.16"/>
+  <circle cx="880" cy="330" r="120" fill="#f3f0e8" opacity="0.08"/>
+  <path d="M100,1380 L1150,1380 L1150,1250 L100,1120 Z" fill="#0c110f" opacity="0.35"/>
+  <line x1="0" y1="700" x2="1200" y2="700" stroke="#d8b44b" stroke-width="1" opacity="0.25"/>
+</svg>
