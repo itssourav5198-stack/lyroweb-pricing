@@ -150,7 +150,7 @@ function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <div className="brand-lockup" aria-label="LyroWeb Solutions">
       <img
-        src="/images/lyroweb-mark.svg"
+        src="/images/logo-1.png"
         alt=""
         className="brand-mark"
       />
@@ -327,7 +327,7 @@ export default function Home() {
             >
               <div className="hero-image-frame">
                 <img
-                  src="/images/hero-abstract.svg"
+                  src="/images/lyroweb-hero-abstract_7d580397.jpg"
                   alt="Abstract graphite and saffron studio sculpture"
                 />
               </div>
@@ -421,7 +421,7 @@ export default function Home() {
           <div className="app-visual">
             <Reveal>
               <div className="image-window image-window--app">
-                <img src="/images/app-sculpture.svg" alt="Abstract mobile app development sculpture" />
+                <img src="/images/lyroweb-app-sculpture_e2b874a0.jpg" alt="Abstract mobile app development sculpture" />
               </div>
             </Reveal>
             <span className="image-caption">Mobile apps / 03</span>
@@ -457,7 +457,7 @@ export default function Home() {
               <h2>Brand, design &amp; sound — <em>made to carry.</em></h2>
             </div>
             <div className="creative-image-wrap">
-              <img src="/images/branding-object.svg" alt="Abstract brand identity studio materials" />
+              <img src="/images/lyroweb-branding-object_8472022a.jpg" alt="Abstract brand identity studio materials" />
             </div>
           </div>
           <div className="creative-grid">
