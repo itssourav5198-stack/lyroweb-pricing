@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
-const contactHref = "mailto:sohimaproduction@gmail.com";
+const contactHref = "mailto:lyroweb.solution@gmail.com";
 
 const websitePackages = [
   {
@@ -483,7 +483,7 @@ export default function Home() {
       <footer className="site-footer">
         <div><Logo /><span>© 2026 LyroWeb Solutions</span></div>
         <p>Website · App · Branding · Creative</p>
-        <a href={contactHref}>sohimaproduction@gmail.com</a>
+        <a href={contactHref}>lyroweb.solution@gmail.com</a>
       </footer>
     </div>
   );
