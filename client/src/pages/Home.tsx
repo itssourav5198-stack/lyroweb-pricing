@@ -264,12 +264,81 @@ function CreativeCard({ item, index }: { item: (typeof creativeServices)[number]
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProjectFormOpen, setIsProjectFormOpen] = useState(false);
   const reduceMotion = useReducedMotion();
 
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <div className="site-shell">
+      {isProjectFormOpen && (
+  <div className="project-modal">
+    <div className="project-form">
+      <h2>Start Your Project</h2>
+
+      <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Project Enquiry - LyroWeb Solutions"
+        />
+
+        <label>Full Name *</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+        />
+
+        <label>Email *</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email"
+          required
+        />
+
+        <label>Phone / WhatsApp</label>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="+91"
+        />
+
+        <label>Service *</label>
+        <select name="service" required>
+          <option value="">Select service</option>
+          <option>Website Development</option>
+          <option>Logo Design</option>
+          <option>Graphic Design</option>
+          <option>AI Automation</option>
+          <option>Other</option>
+        </select>
+
+        <label>Project Details *</label>
+        <textarea
+          name="message"
+          placeholder="Describe your project"
+          required
+        />
+
+        <button type="submit">
+          Submit Project
+        </button>
+
+      </form>
+
+      <button
+        type="button"
+        onClick={() => setIsProjectFormOpen(false)}
+      >
+        Close
+      </button>
+    </div>
+  </div>
+)}
       <header className="site-header">
         <a href="#top" className="header-logo" onClick={closeMenu}>
           <Logo />
@@ -285,7 +354,7 @@ export default function Home() {
         </a>
         <button
           className="menu-toggle"
-          onClick={() => setIsMenuOpen((open) => !open)}
+          onClick={() => setIsProjectFormOpen(true)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
         >
