@@ -17,6 +17,22 @@ import { useState } from "react";
 
 const contactHref = "mailto:lyroweb.solution@gmail.com";
 
+// Add each portfolio website link here. Empty link = button stays hidden.
+const founders = [
+  {
+    name: "Sourav Maity",
+    role: "Founder",
+    bio: "Leads web, product and creative direction at LyroWeb Solutions.",
+    portfolio: "",
+  },
+  {
+    name: "Mohima Shuklabaidya",
+    role: "Co-Founder",
+    bio: "Shapes the brand, design and creative side of every project.",
+    portfolio: "",
+  },
+];
+
 const websitePackages = [
   {
     label: "Basic",
@@ -347,6 +363,7 @@ export default function Home() {
           <a href="#websites" onClick={closeMenu}>Websites</a>
           <a href="#services" onClick={closeMenu}>Services</a>
           <a href="#creative" onClick={closeMenu}>Creative</a>
+          <a href="#founders" onClick={closeMenu}>Founders</a>
         </nav>
         <a href={contactHref} className="header-cta">
           <span>Start a project</span>
@@ -534,6 +551,27 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="founders" className="founders-section section-pad">
+          <Reveal>
+            <h2>The people behind <em>LyroWeb.</em></h2>
+          </Reveal>
+          <div className="founders-grid">
+            {founders.map((f) => (
+              <article className="founder" key={f.name}>
+                <span className="founder-role">{f.role}</span>
+                <h3>{f.name}</h3>
+                <p>{f.bio}</p>
+                {f.portfolio ? (
+                  <a href={f.portfolio} target="_blank" rel="noreferrer" className="founder-link">
+                    <span>View portfolio</span>
+                    <ArrowUpRight size={16} aria-hidden="true" />
+                  </a>
+                ) : null}
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="closing-section section-pad">
           <div className="closing-rule" />
           <Reveal className="closing-content">
@@ -551,7 +589,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div><Logo /><span>© 2026 LyroWeb Solutions</span></div>
-        <p>Website · App · Branding · Creative</p>
+        <p>Founded by Sourav Maity &amp; Mohima Shuklabaidya</p>
         <a href={contactHref}>lyroweb.solution@gmail.com</a>
       </footer>
     </div>

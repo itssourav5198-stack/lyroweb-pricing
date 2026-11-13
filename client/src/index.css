@@ -295,3 +295,16 @@ h1 em, h2 em { color: var(--saffron); font-weight: 500; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Founders */
+.founders-section { max-width: 1540px; margin: 0 auto; padding-top: clamp(5rem, 9vw, 9rem); padding-bottom: clamp(5rem, 9vw, 9rem); border-top: 1px solid var(--faint); }
+.founders-section h2 { font: 500 clamp(2.2rem, 5vw, 4.4rem)/1.04 var(--font-display); max-width: 14ch; }
+.founders-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 4.5rem); }
+.founder { padding: clamp(1.5rem, 3vw, 2.5rem) 0; border-top: 1px solid var(--saffron); }
+.founder-role { font: .72rem var(--font-mono); color: var(--saffron); letter-spacing: .04em; }
+.founder h3 { margin: .9rem 0 .7rem; font: 500 clamp(1.9rem, 3.4vw, 3rem)/1.05 var(--font-display); }
+.founder p { max-width: 38ch; color: var(--mist); line-height: 1.65; }
+.founder-link { display: inline-flex; align-items: center; gap: .6rem; margin-top: 1.4rem; padding-bottom: .35rem; border-bottom: 1px solid var(--saffron); color: var(--bone); font-size: .9rem; transition: gap 200ms var(--ease-out); }
+.founder-link:hover { gap: .95rem; }
+.founder-link:focus-visible { outline: 2px solid var(--ring); outline-offset: 4px; }
+@media (max-width: 720px) { .founders-grid { grid-template-columns: 1fr; } }
