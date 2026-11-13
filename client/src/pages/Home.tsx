@@ -23,13 +23,13 @@ const founders = [
     name: "Sourav Maity",
     role: "Founder",
     bio: "Leads web, product and creative direction at LyroWeb Solutions.",
-    portfolio: "",
+    portfolio: "https://souravmaity.vercel.app/",
   },
   {
     name: "Mohima Shuklabaidya",
     role: "Co-Founder",
     bio: "Shapes the brand, design and creative side of every project.",
-    portfolio: "",
+    portfolio: "https://mohimasuklabaidya.vercel.app/",
   },
 ];
 
