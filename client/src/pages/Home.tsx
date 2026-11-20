@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "wouter";
 
 const contactHref = "mailto:lyroweb.solution@gmail.com";
 
@@ -590,6 +591,11 @@ export default function Home() {
       <footer className="site-footer">
         <div><Logo /><span>© 2026 LyroWeb Solutions</span></div>
         <p>Founded by Sourav Maity &amp; Mohima Shuklabaidya</p>
+        <nav className="footer-links" aria-label="Policies">
+          <Link href="/contact">Contact Us</Link>
+          <Link href="/terms">Terms &amp; Conditions</Link>
+          <Link href="/refunds">Refunds &amp; Cancellations</Link>
+        </nav>
         <a href={contactHref}>lyroweb.solution@gmail.com</a>
       </footer>
     </div>
